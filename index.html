@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <script src="scripts/main.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>My test page</title>
+</head>
+
+<body>
+    <div id="app-7">
+    <ol>
+        <!--
+          现在我们为每个 todo-item 提供 todo 对象
+          todo 对象是变量，即其内容可以是动态的。
+          我们也需要为每个组件提供一个“key”，稍后再
+          作详细解释。
+        -->
+        <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id"
+        ></todo-item>
+      </ol>
+    </div>
+    <script>
+        //定义组件
+        Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+
+var app7 = new Vue({
+  el: '#app-7',
+  data: {
+    groceryList: [
+      { id: 0, text: '蔬菜' },
+      { id: 1, text: '奶酪' },
+      { id: 2, text: '随便其它什么人吃的东西' }
+    ]
+  }
+})
+    </script>
+    
+
+
+
+
+
+    <!--第一个页面-->
+    <h1>我的页面</h1>
+
+    <header>
+        <div class="a1">
+            <h2>图片一</h2>
+            <figure>
+                <img src="images/LM.png.jpeg" alt="一只龙猫" width:300px; display:block; margin:100px; title="这是一只龙猫">
+                <figcaption>龙猫的图片</figcaption>
+            </figure>
+        </div>
+        <div>
+            <h2>图片二</h2>
+            <img src="ab.jpeg" alt="龙猫">
+        </div>
+    </header>
+    <main>
+        <article style="font-size: 100px;">
+
+            <h1>标题</h1>
+
+            <!--<video src="rabbit320.webm" controls>
+        <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.webm">link to the video</a> instead.</p> -->
+            <video controls>
+                <source src="example.mp4" type="video/mp4">
+                <source src="example.webm" type="video/webm">
+                <track kind="subtitles" src="subtitles_en.vtt" srclang="en">
+            </video>
+            <iframe src="https://player.bilibili.com/player.html?aid=19390801&cid=31621681&page=1" scrolling="no"
+                border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+            <p>改革春风吹满地</p>
+
+            <object data="mypdf.pdf" type="application/pdf" width="800" height="1200" typemustmatch>
+                <p>You don't have a PDF plugin, but you can <a href="myfile.pdf">download the PDF file.</a></p>
+            </object>
+            <p>这是一个段落 <i lang="id">vatrushka</i></p>
+            <p>2016年3月8日到3月15日，
+                韩国职业棋士<em>李世乭</em><strong>（이세돌）</strong>九段与由 Google DeepMind 开发的
+                <strong>计算机</strong><b>围棋软件</b> AlphaGo 对弈的五局三胜制围棋比赛在韩国首尔举行。
+                结果为 AlphaGo 以四胜一负的战绩击败李世乭。赛后韩国棋院授予 AlphaGo 荣誉九段的称号</p>
+        </article>
+        <aside>
+            <ul>
+                <li><a href="https://www.imooc.com/">慕课网</a>段落一</li>
+                <li><u style="color:blue;">段落二</u></li>
+                <li>段落三 <cite> 绅士</cite></li>
+            </ul>
+            <ol>
+                <li>段落四：3 × 10<sup>3</sup> &gt; 3 × 10<sup>4</sup> </li>
+                <li>段落五:C<sub>14</sub>H<sub>12</sub>O<sub>3</sub></li>
+                <li>段落六:<abbr title="超文本标记语言（HyperText Markup Language）">HTML</abbr> </li>
+            </ol>
+        </aside>
+    </main>
+    <footer>
+        <dl>
+            <dt>波利尼西亚小鸡舞</dt>
+            <dd>一种古老、神秘但影响广泛的舞蹈，可追溯至公元前 300 年，整个村庄围绕着一个小鸡形状的圈跳舞，祈祷牲畜肥美。</dd>
+            <dt>冰岛布尔曳步舞</dt>
+            <dd>在冰岛人学会用火取暖之前，他们之间流行着这种舞蹈，舞蹈时人们在地上拥成一个圈，用极小极快的动作晃动身体。我有一个学生说冰岛曳步舞是现代甩臀舞的鼻祖。</dd>
+            <dt>北极机器人舞</dt>
+            <dd>一个有趣的历史误传，二十世纪六十年代的英国探险者宣称发现了一种像“机器人跳舞”的舞蹈，这种舞蹈动作僵硬，流行于加拿大和阿拉斯加北部地区。后来人们发现这里的居民是因为天气太冷了才做出这样的动作。</dd>
+        </dl>
+        <!--缩进-->
+
+
+        <a href="https://www.imooc.com/">链接</a>
+        <button><span>切换用户</span></button>
+    </footer>
+</body>
+
+</html>
