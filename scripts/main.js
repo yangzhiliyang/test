@@ -1,3 +1,4 @@
+//同步测试
 let myHeading = document.querySelector('h1');
 myHeading.textContent = 'Hello world!';
 let p=document.querySelector('h2');
