@@ -10,7 +10,16 @@
 </head>
 
 <body>
+    <div id="app1">
+        <p v-if="seen">你看到我了</p>
+    </div>
+
     <div id="app-7">
+            <p>Using mustaches: {{ rawHtml }}</p>
+            <p>Using v-html directive:<span v-html="rawHtml"></span> </p>
+            
+            
+
     <ol>
         <!--
           现在我们为每个 todo-item 提供 todo 对象
@@ -26,6 +35,14 @@
       </ol>
     </div>
     <script>
+
+
+var app1=new vue({
+    el:'#app-1',
+    data:{
+        seen:false
+    }
+})
         //定义组件
         Vue.component('todo-item', {
   props: ['todo'],
@@ -43,7 +60,7 @@ var app7 = new Vue({
   }
 })
     </script>
-    
+
 
 
 
